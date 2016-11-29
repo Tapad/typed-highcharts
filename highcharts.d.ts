@@ -5,14 +5,14 @@
 
 // Original typings from: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/highcharts/highcharts.d.ts
 
-interface Position {
+export interface Position {
   align?: string;
   verticalAlign?: string;
   x?: number;
   y?: number;
 }
 
-interface DateTimeFormats {
+export interface DateTimeFormats {
   /**
    * @default '%H:%M:%S.%L'
    */
@@ -47,12 +47,12 @@ interface DateTimeFormats {
   year?: string;
 }
 
-interface AxisEvent extends Event {
+export interface AxisEvent extends Event {
   min: number;
   max: number;
 }
 
-interface AxisLabels {
+export interface AxisLabels {
   /**
    * What part of the string the given position is anchored to. Can be one of 'left', 'center' or 'right'. Defaults to
    * an intelligent guess based on which side of the chart the axis is on and the rotation of the label.
@@ -173,7 +173,7 @@ interface AxisLabels {
   zIndex?: number;
 }
 
-interface MousePlotEvents {
+export interface MousePlotEvents {
   click?: (event: Event) => void;
   mouseover?: (event: Event) => void;
   mouseout?: (event: Event) => void;
@@ -183,7 +183,7 @@ interface MousePlotEvents {
 /**
  * Text labels for the plot bands
  */
-interface PlotLabel {
+export interface PlotLabel {
   /**
    * Horizontal alignment of the label. Can be one of 'left', 'center' or 'right'.
    * @default 'center'
@@ -237,7 +237,7 @@ interface PlotLabel {
   y?: number;
 }
 
-interface PlotBands {
+export interface PlotBands {
   /**
    * Border color for the plot band. Also requires borderWidth to be set.
    * @default null
@@ -314,7 +314,7 @@ interface PlotBands {
  * An array of lines stretching across the plot area, marking a specific value
  * on one of the axes.
  */
-interface PlotLines {
+export interface PlotLines {
   /**
    * The color of the line.
    */
@@ -357,7 +357,7 @@ interface PlotLines {
   zIndex?: number;
 }
 
-interface AxisTitle {
+export interface AxisTitle {
   /**
    * Alignment of the title relative to the axis values. Possible values are 'low', 'middle' or 'high'.
    * @default 'middle'
@@ -409,7 +409,7 @@ interface AxisTitle {
   y?: number;
 }
 
-interface AxisBreak {
+export interface AxisBreak {
   /**
    * A number indicating how much space should be left between the start and the end of the break. The break size is
    * given in axis units, so for instance on a datetime axis, a break size of 3600000 would indicate the equivalent of
@@ -436,7 +436,7 @@ interface AxisBreak {
   to?: number;
 }
 
-interface AxisOptions {
+export interface AxisOptions {
   /**
    * Whether to allow decimals in this axis' ticks. When counting integers,
    * like persons or hits on a web page, decimals must be avoided in the axis
@@ -895,7 +895,7 @@ interface AxisOptions {
   visible?: boolean;
 }
 
-interface ColorAxisDataClass {
+export interface ColorAxisDataClass {
   from?: number;
   to?: number;
   color?: string | Gradient;
@@ -919,7 +919,7 @@ interface ColorAxisDataClass {
  *
  * See the Axis object for programmatic access to the axis.
  */
-interface ColorAxisOptions {
+export interface ColorAxisOptions {
   /**
    * Determines how to set each data class' color if no individual color is set. The default value, tween, computes
    * intermediate colors between minColor and maxColor. The other possible value, category, pulls colors from the
@@ -1166,7 +1166,7 @@ interface ColorAxisOptions {
   type?: string;
 }
 
-interface Extremes {
+export interface Extremes {
   /**
    * The maximum value of the axis' associated series.
    */
@@ -1187,7 +1187,7 @@ interface Extremes {
   min: number;
 }
 
-interface Animation {
+export interface Animation {
   /**
    * The duration of the animation in milliseconds.
    */
@@ -1201,21 +1201,21 @@ interface Animation {
   easing?: string;
 }
 
-interface AddSeriesEvent extends Event {
+export interface AddSeriesEvent extends Event {
   /**
    * The series options that was passed to the addSeries method.
    */
   options: ChartOptions;
 }
 
-interface AxisValueOptions extends AxisOptions {
+export interface AxisValueOptions extends AxisOptions {
   /**
    * The axis value at the clicked spot
    */
   value: number;
 }
 
-interface ChartClickEvent extends Event {
+export interface ChartClickEvent extends Event {
   /**
    * Array containing the axes of each dimension and each axis' value at the clicked spot
    */
@@ -1226,7 +1226,7 @@ interface ChartClickEvent extends Event {
   yAxis: AxisValueOptions[];
 }
 
-interface ChartDrilldownEvent extends Event {
+export interface ChartDrilldownEvent extends Event {
   /**
    * If a category label was clicked, which index.
    */
@@ -1245,7 +1245,7 @@ interface ChartDrilldownEvent extends Event {
   seriesOptions?: IndividualSeriesOptions;
 }
 
-interface ChartSelectionEvent extends Event {
+export interface ChartSelectionEvent extends Event {
   /**
    * Array containing the axes of each dimension and each axis' min and max values
    */
@@ -1256,7 +1256,7 @@ interface ChartSelectionEvent extends Event {
   yAxis: AxisOptions[];
 }
 
-interface ChartEvents {
+export interface ChartEvents {
   /**
    * Fires when a series is added to the chart after load time, using the addSeries method. One parameter, event, is
    * passed to the function. This contains common event information based on jQuery or MooTools depending on which
@@ -1348,14 +1348,14 @@ interface ChartEvents {
   selection?: (event: ChartSelectionEvent) => void;
 }
 
-interface LinearGradient {
+export interface LinearGradient {
   x1: number;
   y1: number;
   x2: number;
   y2: number;
 }
 
-interface Gradient {
+export interface Gradient {
   linearGradient?: LinearGradient | number[];
   radialGradient?: {
     cx: number; cy: number; r: number;
@@ -1392,7 +1392,7 @@ interface Gradient {
  */
 type Color = string | Gradient;
 
-interface ChartOptions3dFrame {
+export interface ChartOptions3dFrame {
   /**
    * The color of the panel.
    * @default 'transparent'
@@ -1407,7 +1407,7 @@ interface ChartOptions3dFrame {
   size?: number;
 }
 
-interface ChartOptions3d {
+export interface ChartOptions3d {
   /**
    * One of the two rotation angles for the chart.
    * @default 0
@@ -1461,7 +1461,7 @@ interface ChartOptions3d {
   viewDistance?: number;
 }
 
-interface Shadow {
+export interface Shadow {
   /**
    * @default 'black'
    */
@@ -1484,7 +1484,7 @@ interface Shadow {
   width?: number;
 }
 
-interface ChartResetZoomButton {
+export interface ChartResetZoomButton {
   /**
    * The position of the button. This is an object that can hold the properties align, verticalAlign, x and y.
    * @since 2.2
@@ -1505,7 +1505,7 @@ interface ChartResetZoomButton {
   theme?: ButtonStatesTheme;
 }
 
-interface ButtonTheme {
+export interface ButtonTheme {
   display?: string; // css attr eg: 'none'
   /**
    * The button fill color, SVG color definition
@@ -1530,7 +1530,7 @@ interface ButtonTheme {
   style?: Object;
 }
 
-interface ButtonStatesTheme extends ButtonTheme {
+export interface ButtonStatesTheme extends ButtonTheme {
   /**
    * Themed button states. Only hover is supported for reset zoom button.
    */
@@ -1546,7 +1546,7 @@ interface ButtonStatesTheme extends ButtonTheme {
   };
 }
 
-interface ChartOptions {
+export interface ChartOptions {
   /**
    * When using multiple axis, the ticks of two or more opposite axes will automatically be aligned by adding ticks to
    * the axis or axes with the least ticks. This can be prevented by setting alignTicks to false. If the grid lines
@@ -1801,7 +1801,7 @@ interface ChartOptions {
   zoomType?: string;
 }
 
-interface CSSObject {
+export interface CSSObject {
   background?: string;
   border?: string;
   color?: string | Gradient;
@@ -1818,7 +1818,7 @@ interface CSSObject {
   textShadow?: string;
 }
 
-interface CreditsOptions {
+export interface CreditsOptions {
   /**
    * Whether to show the credits text.
    * @default true
@@ -1844,7 +1844,7 @@ interface CreditsOptions {
   text?: string;
 }
 
-interface DataSeriesMapping {
+export interface DataSeriesMapping {
   [pointPropertyName: string]: number;
 }
 
@@ -1857,7 +1857,7 @@ interface DataSeriesMapping {
  * Please note that the default way of adding data in Highcharts, without the need of a module, is through the
  * series.data option.
  */
-interface DataOptions {
+export interface DataOptions {
   /**
    * A two-dimensional array representing the input data on tabular form. This input can be used when the data is
    * already parsed, for example from a grid view component. Each cell can be a string or number. If not
@@ -1991,7 +1991,7 @@ interface DataOptions {
  * The drilldown feature requires the drilldown.js file to be loaded, found in the modules directory of the download
  * package, or online at code.highcharts.com/modules/drilldown.js.
  */
-interface DrilldownOptions {
+export interface DrilldownOptions {
   /**
    * Additional styles to apply to the X axis label for a point that has drilldown data. By default it is underlined
    * and blue to invite to interaction.
@@ -2057,7 +2057,7 @@ interface DrilldownOptions {
   series?: IndividualSeriesOptions[];
 }
 
-interface MenuItem {
+export interface MenuItem {
   /**
    * String to show in the menu item.
    */
@@ -2068,7 +2068,7 @@ interface MenuItem {
   onclick: () => void;
 }
 
-interface Button {
+export interface Button {
   /**
    * Alignment for the buttons.
    * @default 'right'
@@ -2155,7 +2155,7 @@ interface Button {
   y?: number;
 }
 
-interface ExportingContextButton extends Button {
+export interface ExportingContextButton extends Button {
   /**
    * A collection of config options for the menu items. Each options object consists of a text option which is a
    * string to show in the menu item, as well as an onclick parameter which is a callback function to run on click.
@@ -2183,7 +2183,7 @@ interface ExportingContextButton extends Button {
   x?: number;
 }
 
-interface ExportingOptions {
+export interface ExportingOptions {
   /**
    * Experimental setting to allow HTML inside the chart (added through the useHTML options), directly in the exported
    * image. This allows you to preserve complicated HTML structures like tables or bi-directional text in exported
@@ -2305,7 +2305,7 @@ interface ExportingOptions {
  * Global options that don't apply to each chart. These options, like the lang options, must be set using the
  * Highcharts.setOptions method.
  */
-interface GlobalObject {
+export interface GlobalObject {
   /**
    * A custom Date class for advanced date handling. For example, JDate can be hooked in to handle Jalali dates.
    * @since 4.0.4
@@ -2348,17 +2348,17 @@ interface GlobalObject {
   useUTC?: boolean;
 }
 
-interface LabelItem {
+export interface LabelItem {
   html: string;
   style: CSSObject;
 }
 
-interface LabelsOptions {
+export interface LabelsOptions {
   items?: LabelItem[];
   style?: CSSObject;
 }
 
-interface LangObject {
+export interface LangObject {
   /**
    * Exporting module menu. The tooltip title for the context menu holding print and export menu items.
    * @default 'Chart context menu'
@@ -2471,7 +2471,7 @@ interface LangObject {
   weekdays?: string[];
 }
 
-interface LegendNavigationOptions {
+export interface LegendNavigationOptions {
   /**
    * The color for the active up or down arrow in the legend page navigation.
    * @default '#3E576F'
@@ -2503,7 +2503,7 @@ interface LegendNavigationOptions {
   style?: CSSObject;
 }
 
-interface LegendTitleOptions {
+export interface LegendTitleOptions {
   /**
    * Generic CSS styles for the legend title.
    * @default {'fontWeight':'bold'}
@@ -2518,7 +2518,7 @@ interface LegendTitleOptions {
   text?: string;
 }
 
-interface LegendOptions {
+export interface LegendOptions {
   /**
    * The horizontal alignment of the legend box within the chart area. Valid values are 'left', 'center' and 'right'.
    * In the case that the legend is aligned in a corner position, the layout option will determine whether to place it
@@ -2743,7 +2743,7 @@ interface LegendOptions {
  * the end user that something is going on, for example while retrieving new data via an XHR connection. The
  * 'Loading...' text itself is not part of this configuration object, but part of the lang object.
  */
-interface LoadingOptions {
+export interface LoadingOptions {
   /**
    * The duration in milliseconds of the fade out effect.
    * @default 100
@@ -2771,7 +2771,7 @@ interface LoadingOptions {
 /**
  * A collection of options for buttons and menus appearing in the exporting module.
  */
-interface NavigationOptions {
+export interface NavigationOptions {
   /**
    * A collection of options for buttons appearing in the exporting module.
    */
@@ -2803,7 +2803,7 @@ interface NavigationOptions {
  * Options for displaying a message like 'No data to display'. This feature requires the file no-data-to-display.js to
  * be loaded in the page. The actual text to display is set in the lang.noData option.
  */
-interface NoDataOptions {
+export interface NoDataOptions {
   /**
    * An object of additional SVG attributes for the no-data label.
    * @since 3.0.8
@@ -2822,7 +2822,7 @@ interface NoDataOptions {
   style?: CSSObject;
 }
 
-interface PaneBackground {
+export interface PaneBackground {
   /**
    * @default {linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 }, stops: [[0, '#FFF'],[1, '#DDD']]}
    */
@@ -2853,7 +2853,7 @@ interface PaneBackground {
  * Applies only to polar charts and angular gauges. This configuration object holds general options for the combined X
  * and Y axes set. Each xAxis or yAxis can reference the pane by index.
  */
-interface PaneOptions {
+export interface PaneOptions {
   /**
    * An object, or array of objects, for backgrounds. Sub options include backgroundColor (can be solid or gradient),
    * shape ('solid', 'arc' or 'circle'), innerWidth, outerWidth, borderWidth, borderColor.
@@ -2885,7 +2885,7 @@ interface PaneOptions {
   startAngle?: number;
 }
 
-interface DataLabels {
+export interface DataLabels {
   /**
    * The alignment of the data label compared to the point. If right, the right side of the label should be touching
    * the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box,
@@ -3051,7 +3051,7 @@ interface DataLabels {
   zIndex?: number;
 }
 
-interface PieDataLabels extends DataLabels {
+export interface PieDataLabels extends DataLabels {
   /**
    * The color of the line connecting the data label to the pie slice. The default color is the same as the point's
    * color. Defaults to {point.color}.
@@ -3085,7 +3085,7 @@ interface PieDataLabels extends DataLabels {
   softConnector?: boolean;
 }
 
-interface AreaCheckboxEvent extends Event {
+export interface AreaCheckboxEvent extends Event {
   /**
    * The state of the checkbox
    */
@@ -3096,14 +3096,14 @@ interface AreaCheckboxEvent extends Event {
   item: SeriesObject | PointObject;
 }
 
-interface AreaClickEvent extends Event {
+export interface AreaClickEvent extends Event {
   /**
    * A pointer to the nearest point on the graph
    */
   point: PointObject;
 }
 
-interface PlotEvents {
+export interface PlotEvents {
   /**
    * Fires after the series has finished its initial animation, or in case animation is disabled, immediately as the
    * series is displayed.
@@ -3171,7 +3171,7 @@ interface PlotEvents {
   show?: () => void;
 }
 
-interface MarkerState {
+export interface MarkerState {
   /**
    * Enable or disable the point marker. If null, the markers are hidden when the data is dense, and shown for more
    * widespread data points.
@@ -3199,7 +3199,7 @@ interface MarkerState {
   radius?: number;
 }
 
-interface MarkerHoverState extends MarkerState {
+export interface MarkerHoverState extends MarkerState {
   /**
    * The additional line width for a hovered point.
    * @default 1
@@ -3214,7 +3214,7 @@ interface MarkerHoverState extends MarkerState {
   radiusPlus?: number;
 }
 
-interface Marker extends MarkerState {
+export interface Marker extends MarkerState {
   /**
    * Image markers only. Set the image width explicitly. When using this option, a width must also be set.
    * @default null
@@ -3248,7 +3248,7 @@ interface Marker extends MarkerState {
   width?: number;
 }
 
-interface PointEvents {
+export interface PointEvents {
   /**
    * Fires when a point is clicked. One parameter, event, is passed to the function. This contains common event
    * information based on jQuery or MooTools depending on which library is used as the base for Highcharts.
@@ -3317,7 +3317,7 @@ interface PointEvents {
 
 }
 
-interface Halo {
+export interface Halo {
   /**
    * A collection of SVG attributes to override the appearance of the halo, for example fill, stroke and stroke-width.
    * @since 4.0
@@ -3338,7 +3338,7 @@ interface Halo {
   size?: number;
 }
 
-interface LineStates {
+export interface LineStates {
   /**
    * Enable separate styles for the hovered series to visualize that the user hovers either the series itself or the
    * legend.
@@ -3367,7 +3367,7 @@ interface LineStates {
   marker?: Marker;
 }
 
-interface BarStates {
+export interface BarStates {
   /**
    * A specific border color for the hovered point. Defaults to inherit the normal state border color.
    */
@@ -3397,9 +3397,9 @@ interface BarStates {
   halo?: boolean | Halo;
 }
 
-interface PieStates extends BarStates, LineStates { }
+export interface PieStates extends BarStates, LineStates { }
 
-interface AreaZone {
+export interface AreaZone {
   /**
    * Defines the color of the series.
    * @since 4.1.0
@@ -3423,7 +3423,7 @@ interface AreaZone {
   value?: number;
 }
 
-interface RangeDataLabels {
+export interface RangeDataLabels {
   /**
    * The alignment of the data label compared to the point. If right, the right side of the label should be touching
    * the point. For points with an extent, like columns, the alignments also dictates how to align it inside the box,
@@ -3593,7 +3593,7 @@ interface RangeDataLabels {
   zIndex?: number;
 }
 
-interface Dial {
+export interface Dial {
   /**
    * The background or fill color of the gauge's dial.
    * @default 'black'
@@ -3646,7 +3646,7 @@ interface Dial {
   topWidth?: number;
 }
 
-interface Pivot {
+export interface Pivot {
   /**
    * The background color or fill of the pivot.
    * @default 'black'
@@ -3677,7 +3677,7 @@ interface Pivot {
 /**
  * Set options on specific levels. Takes precedence over series options, but not point options.
  */
-interface TreeMapLevel {
+export interface TreeMapLevel {
   /**
    * Can set borderColor on all points which lies on the same level.
    * @since 4.1.0
@@ -3724,7 +3724,7 @@ interface TreeMapLevel {
 /**
  * General options for all series types.
  */
-interface SeriesChart {
+export interface SeriesChart {
   /**
    * Allow this series' points to be selected by clicking on the markers, bars or pie slices.
    * @default false
@@ -3973,7 +3973,7 @@ interface SeriesChart {
   zones?: AreaZone[];
 }
 
-interface AreaChart extends SeriesChart {
+export interface AreaChart extends SeriesChart {
   /**
    * Fill color or gradient for the area. When null, the series' color is used with the series' fillOpacity.
    */
@@ -4010,7 +4010,7 @@ interface AreaChart extends SeriesChart {
   trackByArea?: boolean;
 }
 
-interface AreaRangeChart extends AreaChart {
+export interface AreaRangeChart extends AreaChart {
   /**
    * Extended data labels for range series types. Range series data labels have no x and y options. Instead, they have
    * xLow, xHigh, yLow and yHigh options to allow the higher and lower data label sets individually.
@@ -4019,13 +4019,13 @@ interface AreaRangeChart extends AreaChart {
   dataLabels?: RangeDataLabels;
 }
 
-interface AreaSplineChart extends AreaChart {
+export interface AreaSplineChart extends AreaChart {
 }
 
-interface AreaSplineRangeChart extends AreaRangeChart {
+export interface AreaSplineRangeChart extends AreaRangeChart {
 }
 
-interface BarChart extends SeriesChart {
+export interface BarChart extends SeriesChart {
   /**
    * The color of the border surrounding each column or bar.
    * @default '#FFFFFF'
@@ -4136,7 +4136,7 @@ interface BarChart extends SeriesChart {
  * observation (sample minimum), lower quartile (Q1), median (Q2), upper quartile (Q3), and largest observation (sample
  * maximum).
  */
-interface BoxPlotChart extends ErrorBarChart {
+export interface BoxPlotChart extends ErrorBarChart {
   /**
    * The fill color of the box.
    * @default '#FFFFFF'
@@ -4181,7 +4181,7 @@ interface BoxPlotChart extends ErrorBarChart {
  * as a bubble where the position along the X and Y axes mark the X and Y values, and the size of the bubble relates to
  * the Z value.
  */
-interface BubbleChart extends SeriesChart {
+export interface BubbleChart extends SeriesChart {
   /**
    * Whether to display negative sized bubbles. The threshold is given by the zThreshold option, and negative bubbles
    * can be visualized by setting negativeColor.
@@ -4247,14 +4247,14 @@ interface BubbleChart extends SeriesChart {
   zThreshold?: number;
 }
 
-interface ColumnChart extends BarChart {
+export interface ColumnChart extends BarChart {
 }
 
 /**
  * The column range is a cartesian series type with higher and lower Y values along an X axis. Requires
  * highcharts-more.js. To display horizontal bars, set chart.inverted to true.
  */
-interface ColumnRangeChart extends ColumnChart {
+export interface ColumnRangeChart extends ColumnChart {
   dataLabels?: RangeDataLabels;
 }
 
@@ -4262,7 +4262,7 @@ interface ColumnRangeChart extends ColumnChart {
  * Error bars are a graphical representation of the variability of data and are used on graphs to indicate the error, or
  * uncertainty in a reported measurement.
  */
-interface ErrorBarChart extends SeriesChart {
+export interface ErrorBarChart extends SeriesChart {
   /**
    * When using automatic point colors pulled from the options.colors collection, this option determines whether the
    * chart should receive one color per series or one color per point.
@@ -4386,7 +4386,7 @@ interface ErrorBarChart extends SeriesChart {
  * Funnel charts are a type of chart often used to visualize stages in a sales project, where the top are the initial
  * stages with the most clients. It requires that the modules/funnel.js file is loaded
  */
-interface FunnelChart extends SeriesChart {
+export interface FunnelChart extends SeriesChart {
   /**
    * The color of the border surrounding each column or bar.
    * @default '#FFFFFF'
@@ -4473,7 +4473,7 @@ interface FunnelChart extends SeriesChart {
 /**
  * General plotting options for the gauge series type. Requires highcharts-more.js
  */
-interface GaugeChart extends SeriesChart {
+export interface GaugeChart extends SeriesChart {
   /**
    * Data labels for the gauge. For gauges, the data labels are enabled by default and shown in a bordered box below
    * the point.
@@ -4508,7 +4508,7 @@ interface GaugeChart extends SeriesChart {
  * The heatmap series type. This series type is available both in Highcharts and Highmaps.
  * The colors of each heat map point is usually determined by its value and controlled by settings on the colorAxis.
  */
-interface HeatMapChart extends SeriesChart {
+export interface HeatMapChart extends SeriesChart {
   /**
    * The color of the border surrounding each column or bar.
    * @default '#FFFFFF'
@@ -4576,7 +4576,7 @@ interface HeatMapChart extends SeriesChart {
   };
 }
 
-interface LineChart extends SeriesChart {
+export interface LineChart extends SeriesChart {
   /**
    * Whether to apply steps to the line. Possible values are left, center and right. Prior to 2.3.5, only left was
    * supported.
@@ -4589,7 +4589,7 @@ interface LineChart extends SeriesChart {
 /**
  * A pie chart is a circular chart divided into sectors, illustrating numerical proportion.
  */
-interface PieChart extends SeriesChart {
+export interface PieChart extends SeriesChart {
   /**
    * The color of the border surrounding each slice. When null, the border takes the same color as the slice fill.
    * This can be used together with a borderWidth to fill drawing gaps created by antialiazing artefacts in
@@ -4688,7 +4688,7 @@ interface PieChart extends SeriesChart {
  * the color option, and stroke is applied through lineWidth and lineColor options. Requires the highcharts-more.js
  * file.
  */
-interface PolygonChart extends SeriesChart {
+export interface PolygonChart extends SeriesChart {
   /**
    * The width of the line connecting the data points.
    * @default 0
@@ -4696,7 +4696,7 @@ interface PolygonChart extends SeriesChart {
   lineWidth?: number;
 }
 
-interface PyramidChart extends SeriesChart {
+export interface PyramidChart extends SeriesChart {
   /**
    * The color of the border surrounding each slice
    * @default '#FFFFFF'
@@ -4768,14 +4768,14 @@ interface PyramidChart extends SeriesChart {
   width?: number | string;
 }
 
-interface ScatterChart extends SeriesChart { }
+export interface ScatterChart extends SeriesChart { }
 
 /**
  * A gauge showing values using a filled arc with colors indicating the value. The solid gauge plots values against the
  * yAxis, which is extended with some color options, minColor, maxColor and stops, to control the color of the gauge
  * itself.
  */
-interface SolidGaugeChart extends SeriesChart {
+export interface SolidGaugeChart extends SeriesChart {
   /**
    * Allow the dial to overshoot the end of the perimeter axis by this many degrees. Say if the gauge axis goes from 0
    * to 60, a value of 100, or 1000, will show 5 degrees beyond the end of the axis.
@@ -4792,13 +4792,13 @@ interface SolidGaugeChart extends SeriesChart {
   wrap?: boolean;
 }
 
-interface SplineChart extends SeriesChart { }
+export interface SplineChart extends SeriesChart { }
 
 /**
  * The size of the point shape is determined by its value relative to its siblings values. Requires the module
  * heatmap.js as well, if functionality such as the colorAxis is to be used.
  */
-interface TreeMapChart extends SeriesChart {
+export interface TreeMapChart extends SeriesChart {
   /**
    * When enabled the user can click on a point which is a parent and zoom in on its children.
    * @default false
@@ -4888,7 +4888,7 @@ interface TreeMapChart extends SeriesChart {
   };
 }
 
-interface WaterFallChart extends BarChart {
+export interface WaterFallChart extends BarChart {
   /**
    * A name for the dash style to use for the graph. Applies only to series type having a graph, like line, spline,
    * area and scatter in case it has a lineWidth. The value for the dashStyle include:
@@ -4926,7 +4926,7 @@ interface WaterFallChart extends BarChart {
  * plotOptions.series object. Then options for all series of a specific type are given in the plotOptions of that type,
  * for example plotOptions.line. Next, options for one single series are given in the series array.
  */
-interface PlotOptions {
+export interface PlotOptions {
   area?: AreaChart;
   arearange?: AreaRangeChart;
   areaspline?: AreaSplineChart;
@@ -4955,7 +4955,7 @@ interface PlotOptions {
 /* You will rarely, if ever, want to use this interface directly. Instead it is much more useful to use one of the derived
   * interfaces (AreaChartSeriesOptions, LineChartSeriesOptions, etc.)
   */
-interface IndividualSeriesOptions {
+export interface IndividualSeriesOptions {
   type?: string;
   /**
    * The main color or the series. In line type series it applies to the line and the point markers unless otherwise
@@ -5047,32 +5047,32 @@ interface IndividualSeriesOptions {
   zIndex?: number;
 }
 
-interface SeriesOptions extends IndividualSeriesOptions, SeriesChart { }
+export interface SeriesOptions extends IndividualSeriesOptions, SeriesChart { }
 
-interface AreaChartSeriesOptions extends IndividualSeriesOptions, AreaChart { }
-interface AreaRangeChartSeriesOptions extends IndividualSeriesOptions, AreaRangeChart { }
-interface AreaSplineChartSeriesOptions extends IndividualSeriesOptions, AreaSplineChart { }
-interface AreaSplineRangeChartSeriesOptions extends IndividualSeriesOptions, AreaSplineRangeChart { }
-interface BarChartSeriesOptions extends IndividualSeriesOptions, BarChart { }
-interface BoxPlotChartSeriesOptions extends IndividualSeriesOptions, BoxPlotChart { }
-interface BubbleChartSeriesOptions extends IndividualSeriesOptions, BubbleChart { }
-interface ColumnChartSeriesOptions extends IndividualSeriesOptions, ColumnChart { }
-interface ColumnRangeChartSeriesOptions extends IndividualSeriesOptions, ColumnRangeChart { }
-interface ErrorBarChartSeriesOptions extends IndividualSeriesOptions, ErrorBarChart { }
-interface FunnelChartSeriesOptions extends IndividualSeriesOptions, FunnelChart { }
-interface GaugeChartSeriesOptions extends IndividualSeriesOptions, GaugeChart { }
-interface HeatMapSeriesOptions extends IndividualSeriesOptions, HeatMapChart { }
-interface LineChartSeriesOptions extends IndividualSeriesOptions, LineChart { }
-interface PieChartSeriesOptions extends IndividualSeriesOptions, PieChart { }
-interface PolygonChartSeriesOptions extends IndividualSeriesOptions, PolygonChart { }
-interface PyramidChartSeriesOptions extends IndividualSeriesOptions, PyramidChart { }
-interface ScatterChartSeriesOptions extends IndividualSeriesOptions, ScatterChart { }
-interface SolidGaugeChartSeriesOptions extends IndividualSeriesOptions, SolidGaugeChart { }
-interface SplineChartSeriesOptions extends IndividualSeriesOptions, SplineChart { }
-interface TreeMapChartSeriesOptions extends IndividualSeriesOptions, TreeMapChart { }
-interface WaterFallChartSeriesOptions extends IndividualSeriesOptions, WaterFallChart { }
+export interface AreaChartSeriesOptions extends IndividualSeriesOptions, AreaChart { }
+export interface AreaRangeChartSeriesOptions extends IndividualSeriesOptions, AreaRangeChart { }
+export interface AreaSplineChartSeriesOptions extends IndividualSeriesOptions, AreaSplineChart { }
+export interface AreaSplineRangeChartSeriesOptions extends IndividualSeriesOptions, AreaSplineRangeChart { }
+export interface BarChartSeriesOptions extends IndividualSeriesOptions, BarChart { }
+export interface BoxPlotChartSeriesOptions extends IndividualSeriesOptions, BoxPlotChart { }
+export interface BubbleChartSeriesOptions extends IndividualSeriesOptions, BubbleChart { }
+export interface ColumnChartSeriesOptions extends IndividualSeriesOptions, ColumnChart { }
+export interface ColumnRangeChartSeriesOptions extends IndividualSeriesOptions, ColumnRangeChart { }
+export interface ErrorBarChartSeriesOptions extends IndividualSeriesOptions, ErrorBarChart { }
+export interface FunnelChartSeriesOptions extends IndividualSeriesOptions, FunnelChart { }
+export interface GaugeChartSeriesOptions extends IndividualSeriesOptions, GaugeChart { }
+export interface HeatMapSeriesOptions extends IndividualSeriesOptions, HeatMapChart { }
+export interface LineChartSeriesOptions extends IndividualSeriesOptions, LineChart { }
+export interface PieChartSeriesOptions extends IndividualSeriesOptions, PieChart { }
+export interface PolygonChartSeriesOptions extends IndividualSeriesOptions, PolygonChart { }
+export interface PyramidChartSeriesOptions extends IndividualSeriesOptions, PyramidChart { }
+export interface ScatterChartSeriesOptions extends IndividualSeriesOptions, ScatterChart { }
+export interface SolidGaugeChartSeriesOptions extends IndividualSeriesOptions, SolidGaugeChart { }
+export interface SplineChartSeriesOptions extends IndividualSeriesOptions, SplineChart { }
+export interface TreeMapChartSeriesOptions extends IndividualSeriesOptions, TreeMapChart { }
+export interface WaterFallChartSeriesOptions extends IndividualSeriesOptions, WaterFallChart { }
 
-interface DataPoint {
+export interface DataPoint {
   /**
    * Individual color for the point. By default the color is pulled from the global colors array.
    * @default undefined
@@ -5194,7 +5194,7 @@ interface DataPoint {
 /**
  * The chart's subtitle
  */
-interface SubtitleOptions {
+export interface SubtitleOptions {
   /**
    * The horizontal alignment of the subtitle. Can be one of 'left', 'center' and 'right'.
    * @default 'center'
@@ -5243,7 +5243,7 @@ interface SubtitleOptions {
   y?: number;
 }
 
-interface TitleOptions {
+export interface TitleOptions {
   /**
    * The horizontal alignment of the title. Can be one of 'left', 'center' and 'right'.
    * @default 'center'
@@ -5300,19 +5300,19 @@ interface TitleOptions {
   y?: number;
 }
 
-interface CrosshairObject {
+export interface CrosshairObject {
   color?: string | Gradient;
   width?: number;
   dashStyle?: 'Solid' | 'ShortDash' | 'ShortDot' | 'ShortDashDot' | 'ShortDashDotDot' | 'Dot' | 'Dash' | 'LongDash' | 'DashDot' | 'LongDashDot' | 'LongDashDotDot';
   zIndex?: number;
 }
 
-interface PlotPoint {
+export interface PlotPoint {
   plotX: number;
   plotY: number;
 }
 
-interface TooltipOptions extends SeriesTooltipOptions {
+export interface TooltipOptions extends SeriesTooltipOptions {
   /**
    * Enable or disable animation of the tooltip. In slow legacy IE browsers the animation is disabled by default.
    * @default true
@@ -5441,7 +5441,7 @@ interface TooltipOptions extends SeriesTooltipOptions {
   useHTML?: boolean;
 }
 
-interface SeriesTooltipOptions {
+export interface SeriesTooltipOptions {
   /**
    * For series on a datetime axes, the date format in the tooltip's header will by default be guessed based on the
    * closest data points. This member gives the default string representations used for each unit.
@@ -5526,7 +5526,7 @@ interface SeriesTooltipOptions {
   xDateFormat?: string;
 }
 
-interface Options {
+export interface Options {
   /**
    * Options regarding the chart area and plot area as well as general chart options.
    */
@@ -5636,7 +5636,7 @@ interface Options {
   yAxis?: AxisOptions[] | AxisOptions;
 }
 
-interface GlobalOptions extends Options {
+export interface GlobalOptions extends Options {
   /**
    * Global options that don't apply to each chart. These options, like the lang options, must be set using the
    * Highcharts.setOptions method.
@@ -5649,7 +5649,7 @@ interface GlobalOptions extends Options {
   lang?: LangObject;
 }
 
-interface DateFormatSpecifiers {
+export interface DateFormatSpecifiers {
   [index: string]: (timestamp: number) => string;
 }
 
@@ -5669,7 +5669,7 @@ interface DateFormatSpecifiers {
  *
  * Configuration options for the axes are given in options.xAxis and options.yAxis.
  */
-interface AxisObject {
+export interface AxisObject {
   /**
    * Add a plot band after render time.
    * @param {PlotBands} options A configuration object consisting of the same members as options.xAxis.plotBands
@@ -5768,7 +5768,7 @@ interface AxisObject {
  * object is returned when a chart is created using the Highcharts.Chart() constructor:
  * var chart1 = new Highcharts.Chart(options);
  */
-interface ChartObject {
+export interface ChartObject {
   /**
    * Add an axis to the chart after render time. Note that this method should never be used when adding data
    * synchronously at chart render time, as it adds expense to the calculations and rendering. When adding data at the
@@ -5980,7 +5980,7 @@ interface ChartObject {
   renderer: RendererObject;
 }
 
-interface Chart {
+export interface Chart {
   /**
    * This is the constructor for creating a new chart object.
    * @param  {Options} options The chart options
@@ -6016,7 +6016,7 @@ interface Chart {
  * the Renderer object, these elements allows freeform annotation in the charts or even in your HTML pages without
  * creating a chart at all.
  */
-interface ElementObject {
+export interface ElementObject {
   /**
    * Add the element to the renderer canvas.
    * @param  {ElementObject} parent The element can be added to a g (group) element.
@@ -6093,7 +6093,7 @@ interface ElementObject {
  * The Renderer's methods are chained wherever possible, so you can initiate an element then call for example attr and
  * css and add on that element in one statement.
  */
-interface RendererObject {
+export interface RendererObject {
   /**
    * Draw an arc on the renderer canvas.
    * @param  {number} centerX The x position of the arc's center in the SVG element.
@@ -6181,7 +6181,7 @@ interface RendererObject {
   text(str: string, x: number, y: number): ElementObject;
 }
 
-interface Renderer {
+export interface Renderer {
   new (parentNode: HTMLElement, width: number, height: number): RendererObject;
 }
 
@@ -6194,7 +6194,7 @@ interface Renderer {
  * Another way to reference the point programmatically is by id. Add an id in the point configuration options, and get
  * the point object by chart.get(id).
  */
-interface PointObject {
+export interface PointObject {
   /**
    * For categorized axes this property holds the category name for the point. For other axis it holds the x value.
    * @since 1.2.0
@@ -6278,7 +6278,7 @@ interface PointObject {
  * plotOptions.series object. Then options for all series of a specific type are given in the plotOptions of that type,
  * for example plotOptions.line. Next, options for one single series are given in the series array.
  */
-interface SeriesObject {
+export interface SeriesObject {
   /**
    * Add a point to the series after render time. The point can be added at the end, or by giving it an X value, to
    * the start or in the middle of the series.
@@ -6393,6 +6393,27 @@ interface SeriesObject {
    * @since 1.2.0
    */
   yAxis: AxisObject;
+}
+
+declare global {
+  interface JQuery {
+    highcharts(): ChartObject;
+    /**
+     * Creates a new Highcharts.Chart for the current JQuery selector; usually
+     * a div selected by $('#container')
+     * @param {Options} options Options for this chart
+     * @return current {JQuery} selector the current JQuery selector
+     */
+    highcharts(options: Options): JQuery;
+    /**
+     * Creates a new Highcharts.Chart for the current JQuery selector; usually
+     * a div selected by $('#container')
+     * @param {Options} options Options for this chart
+     * @param callback Callback function used to manipulate the constructed chart instance
+     * @return current {JQuery} selector the current JQuery selector
+     */
+    highcharts(options: Options, callback: (chart: ChartObject) => void): JQuery;
+  }
 }
 
 export let Chart: Chart;
