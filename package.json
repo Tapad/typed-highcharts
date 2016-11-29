@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "echo building... && typings bundle -o out/highcharts.d.ts",
+    "lint": "echo linting... && tslint \"**/*.ts\" -e \"source/**\" -e \"source-test/**\" -e \"out/**\" -e \"node_modules/**\" -e \"typings/**\"",
+    "browser-test": "echo running browser tests... && node npm-scripts/test \"test/**/*.ts\"",
+    "source-test": "echo running source tests... &&  echo no source test",
+    "test": "echo running server tests... && echo no server test",
+    "watch": "onchange -w \"**/*.ts\" -i -e \"out/**\" -- npm -s run build+test",
+    "publish": "npm -s run lint+build+test && echo please publish to typings/registry",
+    "all-tests": "npm run browser-test",
+    "build+test": "npm run build && npm run all-tests",
+    "lint+build+test": "npm run lint && npm run build+test",
+    "prepublish": "typings install"
+  },
+  "devDependencies": {
+    "blue-tape": "^1.0.0",
+    "highcharts": "5.0.5",
+    "jspm": "^0.16.48",
+    "onchange": "^3.0.2",
+    "stream": "0.0.2",
+    "tap-spec": "^4.1.1",
+    "tape-run": "^2.1.4",
+    "ts-node": "^1.7.0",
+    "tslint": "^4.0.2",
+    "tslint-config-typings": "^0.3.1",
+    "typings": "^2.0.0"
+  }
+}
