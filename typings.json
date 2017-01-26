@@ -4,6 +4,7 @@
   "homepage": "http://www.highcharts.com",
   "version": "5.0.5",
   "globalDevDependencies": {
+    "jquery": "registry:dt/jquery#1.10.0+20170104155652",
     "node": "registry:env/node#6.0.0+20161105011511"
   },
   "devDependencies": {

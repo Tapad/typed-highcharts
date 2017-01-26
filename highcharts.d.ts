@@ -1,4 +1,4 @@
-// Type definitions for Highcharts 4.2.5
+// Type definitions for Highcharts 4.2.7
 // Project: http://www.highcharts.com/
 // Definitions by: Damiano Gambarotto <http://github.com/damianog>, Dan Lewi Harkestad <http://github.com/baltie>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
@@ -806,6 +806,12 @@ export interface AxisOptions {
    * @since 1.2.0
    */
   startOnTick?: boolean;
+  /**
+   * Solid gauge series only. Color stops for the solid gauge.
+   * Use this in cases where a linear gradient between a minColor and maxColor is not sufficient.
+   * The stops is an array of tuples, where the first item is a float between 0 and 1 assigning the relative position in the gradient, and the second item is the color.
+   */
+  stops?: [number, string][];
   /**
    * The amount of ticks to draw on the axis. This opens up for aligning the ticks of multiple charts or panes within
    * a chart. This option overrides the tickPixelInterval option.
@@ -5978,6 +5984,8 @@ export interface ChartObject {
   yAxis: AxisObject[];
 
   renderer: RendererObject;
+
+  legend: LegendObject;
 }
 
 export interface Chart {
@@ -6393,6 +6401,16 @@ export interface SeriesObject {
    * @since 1.2.0
    */
   yAxis: AxisObject;
+}
+
+export interface LegendObject {
+  /**
+   * Update the legend with new options.
+   * @param {LegendOptions} options New options that will be merged into the legend's existing options.
+   * @param [boolean] redraw - Whether to redraw the chart. Defaults to true.
+   * @since 5.0.0
+   */
+  update(options: LegendOptions, redraw?: boolean): void;
 }
 
 declare global {

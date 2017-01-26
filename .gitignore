@@ -42,3 +42,6 @@ typings
 
 # output folder
 out
+
+# IDE
+.vscode
